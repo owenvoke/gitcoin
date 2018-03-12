@@ -13,12 +13,12 @@
     },
     "autoload": {
         "psr-4": {
-            "pxgamer\\gitcoin\\": "src"
+            "pxgamer\\Gitcoin\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "pxgamer\\gitcoin\\": "tests"
+            "pxgamer\\Gitcoin\\": "tests"
         }
     },
     "scripts": {
