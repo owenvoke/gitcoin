@@ -8,6 +8,12 @@ namespace pxgamer\Gitcoin;
 class Bounty
 {
     /**
+     * Public key id for this bounty
+     * @var int
+     */
+    public $pk;
+
+    /**
      * URL for this specific bounty Ex: api/v0.1/bounties/9
      * @var string
      */
