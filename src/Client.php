@@ -27,4 +27,20 @@ class Client
             'base_uri' => self::BASE_URI,
         ]);
     }
+
+    /**
+     * @param string       $className
+     * @param array|object $data
+     * @return Bounty
+     */
+    private function populateFromData(string $className, $data)
+    {
+        $bounty = new $className();
+
+        foreach ($data as $key => $value) {
+            $bounty->{$key} = $value;
+        }
+
+        return $bounty;
+    }
 }
