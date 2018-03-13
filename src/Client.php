@@ -29,9 +29,30 @@ class Client
     }
 
     /**
+     * Get a specific bounty by its id.
+     *
+     * @param int $id
+     * @return Bounty
+     */
+    public function getBounty(int $id)
+    {
+        $data = \GuzzleHttp\json_decode(
+            $this->client
+                ->get('bounties/'.$id)
+                ->getBody()
+                ->getContents()
+        );
+
+        return $this->populateFromData(
+            Bounty::class,
+            $data
+        );
+    }
+
+    /**
      * @param string       $className
      * @param array|object $data
-     * @return Bounty
+     * @return object|Bounty
      */
     private function populateFromData(string $className, $data)
     {
